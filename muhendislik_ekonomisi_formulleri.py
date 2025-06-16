@@ -51,9 +51,12 @@ def pga(i, g, n, A1):
 
 if __name__ == "__main__":
     print("Kullanım örneği: -40000 * pf(0.12, 3) + 20000 * pa(0.12, 3)\n")
-    ifade = input("İfadeyi girin: ")
-    try:
-        sonuc = eval(ifade, globals())
-        print("Sonuç:", sonuc)
-    except Exception as e:
-        print("Hata:", e)
+    while True:
+        ifade = input("İfadeyi girin (çıkmak için 'e' yazın): ")
+        if ifade.lower() == 'e':
+            break
+        try:
+            sonuc = eval(ifade, globals())
+            print("Sonuç:", sonuc)
+        except Exception as e:
+            print("Hata:", e)
